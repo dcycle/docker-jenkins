@@ -4,4 +4,6 @@
 #
 set -e
 
-apk add --no-cache python3 py3-pip
+apt-get update
+apt-get -y --no-install-recommends install python3
+rm -rf /var/lib/apt/lists/*
