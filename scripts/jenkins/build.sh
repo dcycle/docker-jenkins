@@ -3,7 +3,7 @@ set -e
 source ~/.docker-host-ssh-credentials
 
 # Create a droplet
-DROPLET_NAME=docker-ava
+DROPLET_NAME=docker-jenkins
 IP1=$(ssh "$DOCKERHOSTUSER"@"$DOCKERHOST" \
   "./digitalocean/scripts/new-droplet.sh $DROPLET_NAME")
 # https://github.com/dcycle/docker-digitalocean-php#public-vs-private-ip-addresses
@@ -18,11 +18,11 @@ echo "Created Droplet at $IP"
 sleep 90
 
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
-  root@"$IP" "mkdir -p docker-ava-job"
+  root@"$IP" "mkdir -p docker-jenkins-job"
 scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
   ~/.dcycle-docker-credentials.sh \
   root@$IP:~/.dcycle-docker-credentials.sh
 scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
-  -r * root@"$IP":docker-ava-job
+  -r * root@"$IP":docker-jenkins-job
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
-  root@"$IP" "cd docker-ava-job && ls -lah && ./scripts/rebuild.sh"
+  root@"$IP" "cd docker-jenkins-job && ls -lah && ./scripts/rebuild.sh"
