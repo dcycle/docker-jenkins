@@ -8,4 +8,3 @@ COPY docker-resources /docker-resources
 USER root
 RUN cd /docker-resources && ./build.sh && rm -rf /docker-resources
 USER jenkins
-RUN pip3
