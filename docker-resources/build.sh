@@ -15,3 +15,7 @@ cd ~ && ls -lah && tar xf "doctl-$LATEST-linux-amd64.tar.gz"
 mv ~/doctl /usr/local/bin
 cd ~ && rm "doctl-$LATEST-linux-amd64.tar.gz"
 rm -rf /var/lib/apt/lists/*
+
+# see if python3 and doctl are installed
+python3 --version
+doctl version
