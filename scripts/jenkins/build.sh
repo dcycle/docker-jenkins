@@ -19,7 +19,7 @@ doctl compute droplet create "$DROPLET_NAME" --size 4gb --image ubuntu-20-04-x64
 
 sleep 45
 
-IP=$(doctl compute droplet get xyz --format PublicIPv4 --no-header)
+IP=$(doctl compute droplet get "$DROPLET_NAME" --format PublicIPv4 --no-header)
 echo "Created Droplet at $IP"
 
 sleep 45
