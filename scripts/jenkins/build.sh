@@ -32,4 +32,4 @@ scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
 scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
   -r * root@"$IP":docker-jenkins-job
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no \
-  root@"$IP" "cd docker-jenkins-job && ls -lah && ./scripts/rebuild.sh"
+  root@"$IP" "cd docker-jenkins-job && ls -lah && ./scripts/install-docker-and-rebuild.sh"
