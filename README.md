@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/dcycle/docker-jenkins.svg?style=svg)](https://circleci.com/gh/dcycle/docker-jenkins)
+[![GitHub Actions](https://github.com/dcycle/docker-jenkins/actions/workflows/config.yml/badge.svg)](https://github.com/dcycle/docker-jenkins/actions/workflows/config.yml)
 
 Latest Jenkins with Python 3 and [doctl](https://docs.digitalocean.com/reference/doctl/), updated weekly.
 
